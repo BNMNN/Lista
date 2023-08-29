@@ -1,0 +1,29 @@
+<app-header title="Lista"></app-header>
+
+<ion-content color="light">
+  <!-- <ion-list>
+    <ion-item>
+      <ion-label>Item 1</ion-label>
+      <ion-button fill="clear" slot="end" color="danger">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-label>Item 2</ion-label>
+      <ion-button fill="clear" slot="end" color="danger">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item> -->
+
+    <ion-list [inset]="true" >
+      <ion-item *ngFor="let item of meusItens">
+        <ion-label>{{item.nome}} | {{item.quantidade}}</ion-label>
+        <ion-button fill="clear" slot="end" color="danger" (click)="deletar(item.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+      </ion-item>      
+    </ion-list>
+
+    <ion-button expand="full" color="primary" routerLink="/cadastro">Adicionar Item a Lista</ion-button>
+    <ion-button expand="full" color="primary" routerLink="/home">
+      Voltar para a Home
+    </ion-button>
+</ion-content>

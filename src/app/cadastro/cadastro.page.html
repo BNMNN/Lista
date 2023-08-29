@@ -1,0 +1,23 @@
+<app-header title="Cadastro"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="cadastro(form)">
+      
+      <div>
+        <ion-label class="input-label" position="stacked" for="">Nome do Item</ion-label>
+        <ion-input placeholder="Digite o nome do item" type="text" name="nome" ngModel></ion-input>
+      </div>
+
+      <div>
+        <ion-label class="input-label" position="stacked">Quantidade</ion-label>
+        <ion-input placeholder="Digite a quantidade" type="text" name="quantidade" ngModel></ion-input>
+      </div>  
+  
+      <ion-button expand="full" color="primary" type="submit">{{ nameButton }}</ion-button>
+    </form>
+    
+    <ion-button expand="full" color="primary" routerLink="/list">Acessar Lista de Compras</ion-button>
+    <ion-button expand="full" color="primary" routerLink="/home">
+      Voltar para a Home
+    </ion-button>
+  </ion-content>
